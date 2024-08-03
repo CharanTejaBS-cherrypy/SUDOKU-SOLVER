@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sudoku Solver</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="newspaper">
+      <header>
+        <div class="header-content">
+          <img
+            src="https://uvce.ac.in/img/UVCE/uvce_vector.png"
+            alt="Newspaper Logo"
+            class="logo"
+          />
+          <div>
+            <h1>Times of <em>UVCE</em> <strong>IEEE</strong></h1>
+            <p>Now Digitalized with some digital games</p>
+          </div>
+        </div>
+      </header>
+      <main>
+        <article class="main-article">
+          <h2>Sudoku Solver - Today's DigiGame</h2>
+          <div class="grid-container">
+            <div class="grid">
+              {% for i in range(9) %}
+              <div class="row">
+                {% for j in range(9) %}
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  pattern="\d*"
+                  maxlength="1"
+                  id="cell-{{ i }}-{{ j }}"
+                  class="cell subgrid-{{ (i // 3) * 3 + j // 3 }}"
+                />
+                {% endfor %}
+              </div>
+              {% endfor %}
+            </div>
+            <div class="button-container">
+              <button onclick="solveSudoku()" id="solve">Solve</button>
+              <button onclick="clearBoard()" id="clear">Clear</button>
+            </div>
+          </div>
+        </article>
+        <aside class="sidebar">
+          <h3>
+            Breaking News: People are using Charan's Sudoku Solver very
+            frequently..
+          </h3>
+          <h4>Here is how it works...:</h4>
+          <p>
+            User can enter some valid inputs (numbers from 1-9) wherever they want .. If that placement is valid, one can proceed to solve it..!
+          </p>
+          <p>
+            If there is no invalid placements and inputs and user clicks on SOLVE button , It will fill rest of the board with appropriate numbers.
+          </p>
+          <p>
+            Once the solution is visible, you can reload or click on CLEAR button to see a new board and you can start over!!
+          </p>
+        </aside>
+      </main>
+      <footer>
+        <p>&copy; 2024 Times of UVCE IEEE. All rights reserved.</p>
+      </footer>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
