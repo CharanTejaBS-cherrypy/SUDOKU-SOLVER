@@ -284,8 +284,7 @@ footer {
     font-size: 0.8em;
   }
 }
-
-/* Subgrid styles */
+/*diffColors*/
 .subgrid-0 {
   background-image: linear-gradient(#e0e5f3, #d0d8f7);
 }
