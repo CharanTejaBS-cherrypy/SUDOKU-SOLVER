@@ -52,7 +52,6 @@ function solveSudoku() {
               cell.value = solution[i][j] !== 0 ? solution[i][j] : "";
               cell.classList.add("solver-input");
             }
-            // Reapply subgrid class to ensure colors are preserved
             cell.classList.add(
               `subgrid-${Math.floor(i / 3) * 3 + Math.floor(j / 3)}`
             );
