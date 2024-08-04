@@ -5,7 +5,16 @@ document.addEventListener("DOMContentLoaded", () => {
     cell.addEventListener("input", () => {
       if (!/^[1-9]$/.test(cell.value)) {
         cell.value = "";
-        alert("Invalid Input");
+        Swal.fire({
+          icon: "error",
+          title: "Invalid Input",
+          text: "Please enter a number between 1 and 9",
+          footer: "<h3>Letters or Special Characters are not allowed !</h3>",
+          confirmButtonColor: "#d33",
+          confirmButtonText: "OK",
+          background: "#f2dede",
+          iconColor: "#a94442",
+        });
       }
     });
   });
@@ -50,7 +59,15 @@ function solveSudoku() {
           }
         }
       } else {
-        alert("Invalid Input");
+        Swal.fire({
+          icon: "error",
+          title: "Invalid Input",
+          text: "The given Sudoku puzzle is unsolvable.",
+          confirmButtonColor: "#d33",
+          confirmButtonText: "OK",
+          background: "#f2dede",
+          iconColor: "#a94442",
+        });
       }
     });
 }
