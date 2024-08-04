@@ -48,7 +48,7 @@ header {
 }
 
 .logo {
-    margin-top: 10px;
+  margin-top: 10px;
   margin-left: -20px;
   width: 130px;
   height: auto;
@@ -112,6 +112,7 @@ main {
   background-color: #fff;
   box-sizing: border-box;
   border-radius: 6px;
+  filter: grayscale(80%);
 }
 
 .cell.user-input {
@@ -123,35 +124,41 @@ main {
 }
 
 button {
+  margin: 30px;
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #4d6670;
-  color: #fff;
+  background-color: #4d667000;
+  color: #000000;
   font-weight: bold;
   border: none;
   margin-bottom: 10px;
-  border-radius: 5px;
-  border: 2px solid #00c8ff;
-  box-shadow: 0 0 4px aqua;
+  border-radius: 20px 20px 20px 2px;
+  border: 2px solid #00ff99;
+  box-shadow: 0 0 4px rgb(0, 255, 136);
   transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 button:hover {
-  background-color: #264465;
-  box-shadow: 0 0 10px aqua;
+  background-color: #00b71f;
+  box-shadow: 0 0 10px rgb(0, 255, 85);
+  color: white;
+  transform: scale(1.1);
+  transition: ease-in-out 0.3s;
 }
 
 button + button {
   margin-left: 10px;
-  background-color: #714949;
+  background-color: #71494900;
   border: 2px solid #ff0000;
+  border-radius: 20px 20px 2px 20px;
   box-shadow: 0 0 4px rgb(255, 51, 51);
 }
 
 button + button:hover {
-  background-color: #692424;
+  background-color: #ae0000;
+  color: white;
   box-shadow: 0 0 10px rgb(205, 0, 0);
 }
 
